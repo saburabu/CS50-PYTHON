@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Michael Smith",
+        "email": "michael@gmail.com",
+        "phone": "+2348033333333",
+        "age": 28
+    },
+    {
+        "name": "Mary Jane",
+        "email": "mary@gmail.com",
+        "phone": "+2348098765432",
+        "age": 19
+    }
+]
