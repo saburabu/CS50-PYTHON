@@ -45,17 +45,11 @@ class Student:
         return self._courses
 
 
-    @classmethod
-    def from_list(cls, name, courses):
-        if not name or not isinstance(courses, list):
-            raise ValueError("Provide a valid name and a list of courses")
-        return cls(name, courses)
-
 math = Course("MTH 101")
 csc = Course("CSC 102")
 
 # Using your classmethod!
-s1 = Student.from_list("Chisom", [math, csc])
+s1 = Student("Chisom", [math, csc])
 
 print([c.title for c in s1.get_courses()])     # ['MTH 101', 'CSC 102']
 print([s.name for s in math.get_students()])   # ['Chisom']

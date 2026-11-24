@@ -1,5 +1,5 @@
 class InvalidScoreError(Exception):
-    pass
+    ...
 
 students = {}
 
@@ -102,26 +102,29 @@ def show_average():
     else:
         print("      ")
 
-while True:
-    print("1.Add student\n2.Find student\n3.Update score\n4.Delete student\n5.Show all students\n6.Show average of all students\n7.QUIT")
-    choice = str(input("CHOOSE: "))
+def main():
+    while True:
+        print("1.Add student\n2.Find student\n3.Update score\n4.Delete student\n5.Show all students\n6.Show average of all students\n7.QUIT")
+        choice = str(input("CHOOSE: "))
 
-    if choice == "1":
-        add_students()
-    elif choice == "2":
-        find_students()
-    elif choice == "3":
-        update_score()
-    elif choice == "4":
-        delete_students()
-    elif choice == "5":
-        show_students()
-    elif choice == "6":
-        show_average()
-    elif choice == "7":
-        break
-    else:
-        print("WRONG INPUT TRY AGAIN")
+        if choice == "1":
+            add_students()
+        elif choice == "2":
+            find_students()
+        elif choice == "3":
+            update_score()
+        elif choice == "4":
+            delete_students()
+        elif choice == "5":
+            show_students()
+        elif choice == "6":
+            show_average()
+        elif choice == "7":
+            break
+        else:
+            print("WRONG INPUT TRY AGAIN")
 
 
 
+if __name__ == "__main__":
+    main()

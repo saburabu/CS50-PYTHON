@@ -1,0 +1,23 @@
+[
+    {
+        "vehicle_plate_number": "KJA-234AB",
+        "vehicle_name": "Toyota Camry",
+        "buyer_name": "Amina Yusuf",
+        "buyer_nin": "12345678901",
+        "buyer_phone_number": "+2348012345678"
+    },
+    {
+        "vehicle_plate_number": "ABJ-999XY",
+        "vehicle_name": "Honda Civic",
+        "buyer_name": "Emeka Nwosu",
+        "buyer_nin": "98765432109",
+        "buyer_phone_number": "+2347098765432"
+    },
+    {
+        "vehicle_plate_number": "ABJ-999XY",
+        "vehicle_name": "Honda Civic",
+        "buyer_name": "Amina Yusuf",
+        "buyer_nin": "12345678901",
+        "buyer_phone_number": "+2348012345678"
+    }
+]
