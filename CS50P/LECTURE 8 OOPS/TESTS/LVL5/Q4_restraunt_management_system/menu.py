@@ -3,6 +3,12 @@ from abc import ABC, abstractmethod
 
 class MenuItem(ABC):
     def __init__(self, name, price):
+        if not isinstance(name, str) or not name.strip().lower():
+            raise ValueError(f"Invalid name, name must be a string nt this: {name}")
+
+        if not isinstance(price, (int, float)) or isinstance(price, bool) or not price < 1000:
+            raise ValueError(f"Price must be an integer or a floating point value and price must be greater than 1000 naira not this: {price}")
+        
         self.name = name
         self.price = price
 

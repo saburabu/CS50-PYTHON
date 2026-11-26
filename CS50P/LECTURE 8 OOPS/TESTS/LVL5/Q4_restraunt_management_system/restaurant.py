@@ -1,5 +1,10 @@
 class Table:
-    def __init__(self, number, seats):
+    def __init__(self, number: int, seats: int):
+        if not isinstance(number, int) or isinstance(number, bool) or number <= 0:
+            raise ValueError("Table number must be a positive integer.")
+        if not isinstance(seats, int) or isinstance(seats, bool) or seats <= 0:
+            raise ValueError("Seats must be a positive integer.")
+
         self.number = number
         self.seats = seats
         self.current_order = None
@@ -15,7 +20,8 @@ class Order:
         self.status = "open"
 
     def add_item(self, item):
-        # BUG: closed orders can still be changed.
+        if self.status == "closed":
+            raise ValueError("Cannot add items to a closed order.")
         self.items.append(item)
 
     def total(self):
@@ -38,15 +44,20 @@ class Restaurant:
         self.tables.append(table)
 
     def open_order(self, table):
-        # BUG: this permits multiple open orders for the same table.
+        if table not in self.tables:
+            raise ValueError(f"{table} is not registered in {self.name}.")
+        if table.current_order is not None:
+            raise ValueError(f"{table} already has an open order.")
         order = Order(table)
         table.current_order = order
         self.orders.append(order)
         return order
 
     def close_order(self, order):
-        # BUG: table.current_order is not cleared after closing.
+        if order.status == "closed":
+            raise ValueError("Order is already closed.")
         order.close()
+        order.table.current_order = None
         return order.total()
 
     def table_summary(self, table):
